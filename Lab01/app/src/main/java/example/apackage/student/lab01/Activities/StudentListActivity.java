@@ -31,5 +31,10 @@ public class StudentListActivity extends AppCompatActivity {
         ListView listView = (ListView)findViewById(R.id.listView1);
         ArrayAdapter<Student> adapter= new StudentAdapter(this,studentArrayList);
         listView.setAdapter(adapter);
+
+        /*ArrayAdapter<Student> adapter= new ArrayAdapter<Student>(this,R.layout.support_simple_spinner_dropdown_item,studentArrayList);
+        listView.setAdapter(adapter);*/
+
+
     }
 }
