@@ -1,5 +1,6 @@
 package com.example.wk.lab02.Activities;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -68,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
                 changeFragmentToSecond();
             }
         });
+
+        Button buttonSharedPref = (Button)findViewById(R.id.button_sharedpreferences);
+        buttonSharedPref.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonSharedPrefClicked();
+            }
+        });
     }
 
     private void changeFragmentToFirst()
@@ -88,5 +97,11 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, secondFragment);
         transaction.commit();
+    }
+
+    public void buttonSharedPrefClicked()
+    {
+        Intent intent = new Intent(this, SharedPrefActivity.class);
+        startActivity(intent);
     }
 }
