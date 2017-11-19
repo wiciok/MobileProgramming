@@ -21,8 +21,13 @@
             android:name=".StartService"
             android:enabled="true"
             android:exported="false"
-            android:process=":toastStartService"
-            />
+            android:process=":toastStartService" />
+        <service
+            android:name=".BoundService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".NewActivity"></activity>
     </application>
 
 </manifest>

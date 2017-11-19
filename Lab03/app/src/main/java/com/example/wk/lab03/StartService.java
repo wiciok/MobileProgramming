@@ -23,7 +23,6 @@ public class StartService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        timer = new Timer();
         toast = Toast.makeText(this,"Your service is still running",Toast.LENGTH_SHORT);
     }
 
@@ -32,6 +31,7 @@ public class StartService extends Service {
 
         Toast.makeText(this,"Your service has been started",Toast.LENGTH_LONG).show();
 
+        timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
